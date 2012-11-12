@@ -1,0 +1,158 @@
+{
+  "formatVersion": 1,
+  "passTypeIdentifier": "pass.com.lufthansa.mbp", // Lufthansa passTypeIdentifier (MobileBoardingPass mbp)
+  "serialNumber": "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx", //Version 4 UUID (http://en.wikipedia.org/wiki/Universally_unique_identifier#Version_4_.28random.29)
+  "teamIdentifier": "25EFLW88R4", //Lufthansa Team
+  "organizationName": "Lufthansa",
+  "description": "Lufthansa - Mobile Boarding Pass - Flight LHxxxx (SSS-DDD)", //(xxxx = Flight No (with 0s omitted so 0815 will be LH815, SSS=IATA Code Start Location, DDD=IATA Code Destination Location)
+  "foregroundColor": "rgb(51, 51, 51)",
+  "backgroundColor": "rgb(255, 179, 0)",
+  "labelColor": "rgb(102, 102, 102)",
+  "relevantDate": "YYY-MM-DDThh:mm+0x:00", //Start Time at Start Location
+  "locations": [
+    {
+      "longitude": 11.7861, // Longitude, Latitude of Start Loction (example MUC)
+      "latitude": 48.3539
+    }
+  ],
+  "barcode": {
+    "message": "M1<First Name ie. WILL>/<Last Name ie. SMITH>       E<Lufthansa Booking Number> <IATA Start ie. CGN><IATA Dest ie. HKG>LH <Flight No> aaaM0<Seat No ie.45F>cccc /* aaaM0 unknown meaning, cccc used in alttext below*/ 355\uxxxeyyyKzzzzzBLH /*xxx, yyy. zzzzz unknown*/             <xx followed by ETIX No>  LH LH <Miles & More Frequent Flyer No> W*12344568901 /*unknown but different number then 12345...01*/  LHS",
+    "messageEncoding": "iso-8859-1",
+    "format": "PKBarcodeFormatAztec",
+    "altText": "BN<cccc see above>   LH<Flight No with 0s omitted>"
+  },
+  "boardingPass": {
+    "transitType": "PKTransitTypeAir",
+    "headerFields": [
+      {
+        "key": "seat",
+        "label": "SEAT",
+        "value": "xxx", /Seat Value , ie 45F
+        "changeMessage": "Seat changed to %@"
+      },
+      {
+        "key": "gate",
+        "label": "GATE",
+        "value": "xxx", /Gate Value, ie D15
+        "changeMessage": "Gate changed to %@"
+      }
+    ],
+    "primaryFields": [
+      {
+        "key": "origin",
+        "label": "xxxxxx", //engl start in caps letters, i.e. COLOGNE
+        "value": "xxx", //IATA Code start in caps letters, i.e. GCN
+        "changeMessage": "Origin changed to %@"
+      },
+      {
+        "key": "destination",
+        "label": "xxxxxx", //engl dest in caps letters, i.e. HONG KONG
+        "value": "xxx", //IATA Code dest in caps letters, i.e. HKG
+        "changeMessage": "Destination changed to %@"
+      }
+    ],
+    "secondaryFields": [
+      {
+        "key": "passenger",
+        "label": "NAME OF PASSENGER",
+        "value": "xxx, yyy", //Will, Smith
+        "changeMessage": "Passenger name changed to %@"
+      },
+      {
+        "key": "status",
+        "label": "STATUS",
+        "value": "FTL", //FTL = Frequent Traveller
+        "changeMessage": "Status changed to %@"
+      }
+    ],
+    "auxiliaryFields": [
+      {
+        "key": "flight",
+        "label": "FLIGHT",
+        "value": "LHxxx", //Flight No (with 0s omitted so 0815 will be LH815)
+        "changeMessage": "Flight number time changed to %@"
+      },
+      {
+        "key": "date",
+        "label": "DATE",
+        "value": "04OCT12", //should match relevantDate
+        "changeMessage": "Date changed to %@"
+      },
+      {
+        "key": "boarding",
+        "label": "BOARDING",
+        "value": "13:25", //should match relevantDate
+        "changeMessage": "Boarding time changed to %@"
+      },
+      {
+        "key": "class",
+        "label": "CLASS",
+        "value": "Economy",
+        "changeMessage": "Class changed to %@"
+      },
+      {
+        "key": "data", //this section for internation flight only
+        "label": "DATA",
+        "value": "DOC OK", 
+        "changeMessage": "Data changed to %@"
+      }
+    ],
+    "backFields": [
+      {
+        "key": "intro",
+        "label": "",
+        "value": "Lufthansa wishes you a pleasant flight."
+      },
+      {
+        "key": "info",
+        "label": "",
+        "value": "Please be at the boarding gate in time - Your seat may be reassigned otherwise."
+      },
+      {
+        "key": "baggagedrop",
+        "label": "Baggage Drop Off:",
+        "value": "Term. 2, Bag Drop Kiosk, Departure Level no later than: 21:15 o´clock"
+      }, //Drop of should match relevantDate - optional
+      {
+        "key": "filekey",
+        "label": "Booking reference:",
+        "value": "XXXXXX" //LH Booking Reference
+      },
+      {
+        "key": "etix",
+        "label": "etix:",
+        "value": "xxxxxxxxxxxxxxx" //ETIX No
+      },
+      {
+        "key": "cancel",
+        "label": "Change seat or cancel Check-in",
+        "value": "In case you change your flight plans on short notice or you would like to choose another seat, please cancel or change your checked-in flight here: http://mobile.lufthansa.com/lp/cki/?ticketnr\u003d<ETIX No>\u0026fname\u003d<First Name i.e. Will>\u0026name\u003d<Family Name i.e. Smith>.\n\nYou have access to your Passenger Receipt at www.lufthansa.com up to 30 days after beginning your journey."
+      },
+      {
+        "key": "liability",
+        "label": "Liability",
+        "value": "For travel under this ticket the Montreal Convention or the Warsaw Convention may be applicable and these Conventions limit the liability of carriers in respect of loss of or damage to baggage and for delay. In the case of death or bodily injury no financial limits apply under the Montreal Convention and for European Community carriers; for damage up to the equivalent of 113.100 SDR carriers are liable regardless of negligence."
+      },
+      {
+        "key": "goods",
+        "label": "Dangerous Items",
+        "value": "You may not take these items along:\nFor safety reasons, the laws of all countries prohibit the transportation of the following items in your checked-in or carry-on baggage: Briefcases with built-in alarm devices; Explosives, fireworks, flares; Pressurized containers containing irritant gases, self-defense sprays, camping gas; Containers with flammable liquids such as lighter fuel, paint, varnish, cleaning agents; Items that ignite easily, such as matches; Substances that emit flammable gases upon contact with water; Oxidizing substances, such as bleaching powder, peroxides; Poisonous (toxic) and infectious substances, such as quicksilver, bacteria and virus cultures; Radioactive materials and items; Corrosive substances, such as acids, alkalis, wet cell batteries; Strongly magnetic materials. Lighter is only allowed when carried on oneself."
+      },
+      {
+        "key": "eurights",
+        "label": "EU passenger rights",
+        "value": "If you are denied boarding or if your flight is cancelled or delayed for at least two hours, ask at the check-in counter or boarding gate for the text stating your rights, particularly with regard to compensation and assistance."
+      },
+      {
+        "key": "thanks",
+        "label": "Thank you for travelling Lufthansa.",
+        "value": ""
+      },
+      {
+        "key": "contact",
+        "label": "Contact addresses",
+        "value": "Deutsche Lufthansa AG\nFlughafen-Bereich West\nD-60546 Frankfurt/Main\n\nTelephone: +49-69-69 60*\n(Mon-Fri: 08:00 hrs - 17:00 hrs)\nTelefax: +49-69-69 63 30 22\nInternet: www.lufthansa.com\n\n*Please only call for administrative purposes. For all other queries, please use the “Contact” section of http://mobile.lufthansa.com/lp/cts/."
+      }
+    ]
+  }
+}
