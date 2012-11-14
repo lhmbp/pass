@@ -15,11 +15,11 @@
       "latitude": 48.3539
     }
   ],
-  "barcode": {
-    "message": "M1<First Name ie. WILL>/<Last Name ie. SMITH>       E<Lufthansa Booking Number> <IATA Start ie. CGN><IATA Dest ie. HKG>LH <Flight No> aaaM0<Seat No ie.45F>cccc /*aaaM0 unknown meaning, cccc used in barcode altText below*/ 355\uxxxeyyyKzzzzzBLH <xxx, yyy. zzzzz unknown>             nn<ETIX No>  LH LH <Miles & More Frequent Flyer No> W*12344568901 /*unknown but different number then 12345...01*/  LHS",
+  "barcode": {//message (mostly) uses the format as described in IATA resolution 792, June2010
+    "message": "<M=Format Code><Legs indicator=1><First Name ie. WILL>/<Last Name ie. SMITH>       <E=Electronic Ticket Indicator><ABC123=Lufthansa Booking/PNR Code> <From City Airport IATA Code i.e. CGN><To City Airport IATA Code i.e. HKG><LH=Operating Carrier Code> <Flight No> <Date of Flight (Julien Cal) ie. 228=16th Aug><Compartment Code i.e. M=Economy)><Seat No ie.045F><Check-in Seq No. (max 5 digits) i.e. 0025>  <Passenger Status 3=?><Field Size of the following variable size fied in hex. ie. 55(hex)=85(dec)><\u003e =">"-char in ASCII unicode escape encoded used in JSON; ">"=Beginning of Version No><1 digit Version No i.e. 2><2 digit length of variable field in hex. I.e 18(hex)=24(dec)><1 digit passenger description, ie 0><Source of check-in, ie. K=(strangly) Kiosk check-in><Source of Boarding Pass issuance, ie the letter O=Airport Agent printed><4-digi date of issue of Boarding Passe (Julian Date) ie 2308=2012Nov04><Document Type.B=Boarding Pass><Airline designator of Boarding Pass issuer, ie LH>            nn<ETIX No>  LH LH <Miles & More Frequent Flyer No> W*12344568901 /*unknown but different number then 12345...01*/  LHS",
     "messageEncoding": "iso-8859-1",
     "format": "PKBarcodeFormatAztec",
-    "altText": "BN<cccc see above>   LH<Flight No with 0s omitted>"
+    "altText": "BN<Check-in Seq No. (max 5 digits) i.e. 0025 see also above>   LH<Flight No with 0s omitted>"
   },
   "boardingPass": {
     "transitType": "PKTransitTypeAir",
