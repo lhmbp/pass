@@ -11,7 +11,7 @@
   "relevantDate": "YYYY-MM-DDThh:mm+0x:00", //Deperture time at Start Location
   "locations": [
     {
-      "longitude": 11.7861, // Longitude, Latitude of Start Loction (example MUC)
+      "longitude": 11.7861, // Longitude, Latitude of Start Loction (example MUC) as found on en.wikipedia.org rounded to 4th digit
       "latitude": 48.3539
     }
   ],
@@ -41,7 +41,7 @@
       {
         "key": "origin",
         "label": "xxxxxx", //engl start in caps letters, i.e. COLOGNE
-        "value": "xxx", //IATA Code start in caps letters, i.e. GCN
+        "value": "xxx", //IATA Code start in caps letters, i.e. CGN
         "changeMessage": "Origin changed to %@"
       },
       {
