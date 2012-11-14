@@ -8,7 +8,7 @@
   "foregroundColor": "rgb(51, 51, 51)",
   "backgroundColor": "rgb(255, 179, 0)",
   "labelColor": "rgb(102, 102, 102)",
-  "relevantDate": "YYY-MM-DDThh:mm+0x:00", //Deperture time at Start Location
+  "relevantDate": "YYYY-MM-DDThh:mm+0x:00", //Deperture time at Start Location
   "locations": [
     {
       "longitude": 11.7861, // Longitude, Latitude of Start Loction (example MUC)
@@ -16,7 +16,7 @@
     }
   ],
   "barcode": {
-    "message": "M1<First Name ie. WILL>/<Last Name ie. SMITH>       E<Lufthansa Booking Number> <IATA Start ie. CGN><IATA Dest ie. HKG>LH <Flight No> aaaM0<Seat No ie.45F>cccc /* aaaM0 unknown meaning, cccc used in alttext below*/ 355\uxxxeyyyKzzzzzBLH /*xxx, yyy. zzzzz unknown*/             <xx followed by ETIX No>  LH LH <Miles & More Frequent Flyer No> W*12344568901 /*unknown but different number then 12345...01*/  LHS",
+    "message": "M1<First Name ie. WILL>/<Last Name ie. SMITH>       E<Lufthansa Booking Number> <IATA Start ie. CGN><IATA Dest ie. HKG>LH <Flight No> aaaM0<Seat No ie.45F>cccc /*aaaM0 unknown meaning, cccc used in barcode altText below*/ 355\uxxxeyyyKzzzzzBLH <xxx, yyy. zzzzz unknown>             nn<ETIX No>  LH LH <Miles & More Frequent Flyer No> W*12344568901 /*unknown but different number then 12345...01*/  LHS",
     "messageEncoding": "iso-8859-1",
     "format": "PKBarcodeFormatAztec",
     "altText": "BN<cccc see above>   LH<Flight No with 0s omitted>"
@@ -27,13 +27,13 @@
       {
         "key": "seat",
         "label": "SEAT",
-        "value": "xxx", /Seat Value , ie 45F
+        "value": "xxx", //Seat Value , ie 45F
         "changeMessage": "Seat changed to %@"
       },
       {
         "key": "gate",
         "label": "GATE",
-        "value": "xxx", /Gate Value, ie D15
+        "value": "xxx", //Gate Value, ie D15
         "changeMessage": "Gate changed to %@"
       }
     ],
@@ -55,13 +55,13 @@
       {
         "key": "passenger",
         "label": "NAME OF PASSENGER",
-        "value": "xxx, yyy", //Will, Smith
+        "value": "xxx, yyy", //Will, Smith (not fully Caps)
         "changeMessage": "Passenger name changed to %@"
       },
       {
         "key": "status",
         "label": "STATUS",
-        "value": "FTL", //FTL = Frequent Traveller
+        "value": "FTL", //FTL = Frequent Traveller, SEN = Senator, HON = Hon Circle
         "changeMessage": "Status changed to %@"
       }
     ],
