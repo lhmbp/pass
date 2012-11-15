@@ -15,46 +15,47 @@
       "latitude": 48.3539
     }
   ],
-  "barcode": {//message (mostly) uses the format as described in IATA resolution 792, June2010 - there are no carriage returns, here they are only to increase readability. '_' depicts "space" in case not specified otherwhise
+  "barcode": {//message (mostly) uses the format as described inIATA BCBP standard / IATA resolution 792, June2010 - there are no carriage returns, in the code they are only to increase readability. '_' depicts "space" in case not specified otherwhise.
     "message": "
-M<1 char; Format Code>
-1<1 char; Legs indicator. Legs are stop-overs / segments in IATA language>
-WILL/SMITH__________<20char; Passenger Name sepperated in First Name/Last Name all caps. Left justfied and trailing blanks>
-E<1 char; E=Electronic Ticket Indicator>
-ABC123_<7 char; ABC123=Lufthansa Booking / PNR Code. Left justfied and trailing blanks>
-CGN<3 char; From City Airport IATA Code i.e. CGN>
-HKG<3 char; To City Airport IATA Code i.e. HKG>
-LH_<3 char; Operating Carrier Code. Left justfied and trailing blanks>
-0730_<5 char; Flight No. Leading zero on numerics and trailing blanks>
-228<3 char; Date of Flight (in Julian Date) ie. 228=16th Aug. Leading zeros. Converter by NASA: http://www-air.larc.nasa.gov/tools/jday.htm>
-M<1 char; Compartment Code i.e. M=Economy)>
-045F<4 char; Seat No. Leading zeros>
-0025_<5 char; Check-in Seq No. Leading zero on numerics and trailing blanks>
-3<1 char; Passenger Status 3=?>
-55<2 char; Field Size in chars of the following variable size field in hex. ie. 55(hex)=85(dec) until the end of message. Right justified and leading zeros>
-\u003e<1 char; BUT \u003e =">"-char ASCII unicode escape encoded as used in JSON; ">"=Beginning of Version No>
-2<1 char; Version No.>
-18<2 char; field size of following structured message in hex ie. 18(hex)=24(dec). Right justified and leading zeros>
-0<1 char; passenger description, 0=?>
-K<1 char; Source of Check-in, ie. K=(strangly) Kiosk check-in>
-O<1 char; Source of Boarding Pass issuance, ie. the letter O=Airport Agent printed>
-2308<4 char; date of issue of Boarding Passe (in Julian Date) ie 2308=2012 Nov 04. First digit for the year, then 3 digits with leading zeros. Converter by NASA: http://www-air.larc.nasa.gov/tools/jday.htm>
-B<1 char; Document Type. B=Boarding Pass>
-LH_<3 char; Airline designator of Boarding Pass issuer>
-_____________<13char; Baggage Tag licence plate No.(s)>
-26<2 char; Field size of following structured message (repeated) in hex ie. 26(hex)=38(dec). Right justified with leading zeros>
-220<3 char; Air Line numeric Code. Beginning of ETIX No. Right justified with leading zeros>
-1234567890<10char; Document Form Serial Number. Continuation of ETIX No. Right justified with leading zeros>
-_<1 char; Selectee indicator>
-_<1 char; International Document Verification>
-LH_<3 char; Marketing Carrier Designator. Left justfied and trailing blanks>
-LH_<3 char; Frequent Flyer Airline Designator. Left justfied and trailing blanks>
-123456789012345_<16 char; Miles & More Frequent Flyer No. Left justfied and trailing blanks>
-W<1 char. ID/AD Indicator>
-*30<3 char. Free bagage allowance>
-123456789<9 chars; Airline specific. Different number then 12345...9
-___<3 chars; Airline specific>
-LHS<3 chars; Airline specific>
+M                   < 1 char; Format Code. S=Single.M=Multiple>
+1                   < 1 char; Legs indicator. Legs are stop-overs / segments in IATA language>
+WILL/SMITH__________<20 char; Passenger Name sepperated in FIRSTNAME/LASTNAME all caps. Left justified and trailing blanks>
+E                   < 1 char; E=Electronic Ticket Indicator>
+ABC123_             < 7 char; ABC123=Lufthansa Booking / PNR Code. Left justified and trailing blanks>
+CGN                 < 3 char; From City Airport IATA Code i.e. CGN>
+HKG                 < 3 char; To City Airport IATA Code i.e. HKG>
+LH_                 < 3 char; Operating Carrier Code. Left justified and trailing blanks>
+0730_               < 5 char; Flight No. Leading zero on numerics and trailing blanks>
+228                 < 3 char; Date of Flight (in Julian Date) ie. 228=16th Aug. Leading zeros. Converter by NASA: http://www-air.larc.nasa.gov/tools/jday.htm>
+M                   < 1 char; Compartment Code i.e. M=Economy)>
+045F                < 4 char; Seat No. Leading zeros>
+0025_               < 5 char; Check-in Seq No. Leading zero on numerics and trailing blanks>
+3                   < 1 char; Passenger Status 3=?>
+55                  < 2 char; Field Size in chars of the following variable size field in hex. ie. 55(hex)=85(dec) until the end of message. Right justified and leading zeros>
+\u003e              < 1 char; BUT \u003e =">"-char ASCII unicode escape encoded as used in JSON; ">"=Beginning of Version No>
+2                   < 1 char; Version No.>
+18                  < 2 char; field size of following structured message in hex ie. 18(hex)=24(dec). Right justified and leading zeros>
+0                   < 1 char; passenger description, 0=?>
+K                   < 1 char; Source of Check-in, ie. K=(strangly) Kiosk check-in>
+O                   < 1 char; Source of Boarding Pass issuance, ie. the letter O=Airport Agent printed>
+2308                < 4 char; date of issue of Boarding Passe (in Julian Date) ie 2308=2012 Nov 04. First digit for the year, then 3 digits with leading zeros. Converter by NASA: http://www-air.larc.nasa.gov/tools/jday.htm>
+B                   < 1 char; Document Type. B=Boarding Pass>
+LH_                 < 3 char; Airline designator of Boarding Pass issuer>
+_____________       <13 char; Baggage Tag licence plate No.(s)><end of struct msg hex(18)>
+26                  < 2 char; Field size of following structured message (repeated) in hex ie. 26(hex)=38(dec). Right justified with leading zeros>
+220                 < 3 char; Air Line numeric Code / IATA Prefix Code. 220 = LH. Details: http://www.avcodes.co.uk/airlcodesearch.asp Beginning of ETIX No. Right justified with leading zeros>
+1234567890          <10 char; Document Form Serial Number. Continuation of ETIX No. Right justified with leading zeros>
+_                   < 1 char; Selectee indicator>
+_                   < 1 char; International Document Verification>
+LH_                 < 3 char; Marketing Carrier Designator. Left justified and trailing blanks>
+LH_                 < 3 char; Frequent Flyer Airline Designator. Left justified and trailing blanks>
+123456789012345_    <16 char; Miles & More Frequent Flyer No. Left justified and trailing blanks>
+W                   < 1 char; ID/AD Indicator><end of struct msg hex(26)>
+*30                 < 3 char; Free bagage allowance. *30=?>
+123456789           < 9 char; Airline specific. Different number then 12345...9
+___                 < 3 char; Airline specific>
+LH                  < 2 char; Airline specific><end of field hex(55)>
+S                   < 1 char; Airline specific. S=stop?>  
 ",
     "messageEncoding": "iso-8859-1",
     "format": "PKBarcodeFormatAztec",
