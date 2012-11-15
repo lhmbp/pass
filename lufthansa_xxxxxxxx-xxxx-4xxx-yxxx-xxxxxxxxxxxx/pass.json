@@ -15,11 +15,43 @@
       "latitude": 48.3539
     }
   ],
-  "barcode": {//message (mostly) uses the format as described in IATA resolution 792, June2010
-    "message": "<M=Format Code><Legs indicator=1><First Name ie. WILL>/<Last Name ie. SMITH>       <E=Electronic Ticket Indicator><ABC123=Lufthansa Booking/PNR Code> <From City Airport IATA Code i.e. CGN><To City Airport IATA Code i.e. HKG><LH=Operating Carrier Code> <Flight No> <Date of Flight (Julien Cal) ie. 228=16th Aug><Compartment Code i.e. M=Economy)><Seat No ie.045F><Check-in Seq No. (max 5 digits) i.e. 0025>  <Passenger Status 3=?><Field Size of the following variable size fied in hex. ie. 55(hex)=85(dec)><\u003e =">"-char in ASCII unicode escape encoded used in JSON; ">"=Beginning of Version No><1 digit Version No i.e. 2><2 digit length of variable field in hex. I.e 18(hex)=24(dec)><1 digit passenger description, ie 0><Source of check-in, ie. K=(strangly) Kiosk check-in><Source of Boarding Pass issuance, ie the letter O=Airport Agent printed><4-digi date of issue of Boarding Passe (Julian Date) ie 2308=2012Nov04><Document Type.B=Boarding Pass><Airline designator of Boarding Pass issuer, ie LH>            nn<ETIX No>  LH LH <Miles & More Frequent Flyer No> W*12344568901 /*unknown but different number then 12345...01*/  LHS",
+  "barcode": {//message (mostly) uses the format as described in IATA resolution 792, June2010 - there are no carriage returns, here they are only to increase readability.
+    "message": "
+<1 char; M=Format Code>
+<1 char; Legs indicator=1. Legs are 'stop-overs' in IATA language.>
+<20char; Passenger Name sepperated in First Name/Last Name all caps ie. WILL/SMITH>
+<1 char; E=Electronic Ticket Indicator>
+<6?char; ABC123=Lufthansa Booking / PNR Code>
+<3 char; From City Airport IATA Code i.e. CGN>
+<3 char; To City Airport IATA Code i.e. HKG>
+<3 char; LH =Operating Carrier Code>
+<4?char; Flight No>
+<3 char; Date of Flight (in Julian Date) ie. 228=16th Aug, converter by NASA: http://www-air.larc.nasa.gov/tools/jday.htm>
+<1 char; Compartment Code i.e. M=Economy)>
+<4 char; Seat No ie.045F>
+<5 char; Check-in Seq No. i.e. 0025 >
+<1 char; Passenger Status 3=?>
+<2 char; Field Size in chars of the following variable size field in hex. ie. 55(hex)=85(dec) until the end of message>
+<1 char; BUT this is \u003e =">"-char in ASCII unicode escape encoded used in JSON; ">"=Beginning of Version No>
+<1 char; Version No i.e. 2>
+<2 char; length of variable field in hex. I.e 18(hex)=24(dec)>
+<1 char; passenger description, ie 0?>
+<1 char; Source of check-in, ie. K=(strangly) Kiosk check-in>
+<1 char; Source of Boarding Pass issuance, ie. the letter O=Airport Agent printed>
+<4 char; date of issue of Boarding Passe (in Julian Date) ie 2308=2012 Nov 04, converter by NASA: http://www-air.larc.nasa.gov/tools/jday.htm>
+<1 char; Document Type. B=Boarding Pass>
+<3 char; Airline designator of Boarding Pass issuer, ie. LH >
+<2 char; ?>
+<ETIX No>
+<3 char; ie. LH >
+<3 char; ie. LH >
+<16 char; Miles & More Frequent Flyer No >
+<variable W*12344568901 /*unknown but different number then 12345...01*/
+<LHS>
+",
     "messageEncoding": "iso-8859-1",
     "format": "PKBarcodeFormatAztec",
-    "altText": "BN<Check-in Seq No. (max 5 digits) i.e. 0025 see also above>   LH<Flight No with 0s omitted>"
+    "altText": "BN<Check-in Seq No. (max 5 char) i.e. 0025 see also above>   LH<Flight No with 0s omitted>"
   },
   "boardingPass": {
     "transitType": "PKTransitTypeAir",
