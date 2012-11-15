@@ -22,8 +22,8 @@ M                   < 1 char; Format Code. S=Single.M=Multiple>
 WILL/SMITH__________<20 char; Passenger Name sepperated in FIRSTNAME/LASTNAME all caps. Left justified and trailing blanks>
 E                   < 1 char; E=Electronic Ticket Indicator>
 ABC123_             < 7 char; ABC123=Lufthansa Booking / PNR Code. Left justified and trailing blanks>
-CGN                 < 3 char; From City Airport IATA Code i.e. CGN>
-HKG                 < 3 char; To City Airport IATA Code i.e. HKG>
+CGN                 < 3 char; From City Airport IATA Code>
+HKG                 < 3 char; To City Airport IATA Code>
 LH_                 < 3 char; Operating Carrier Code. Left justified and trailing blanks>
 0730_               < 5 char; Flight No. Leading zero on numerics and trailing blanks>
 228                 < 3 char; Date of Flight (in Julian Date) ie. 228=16th Aug. Leading zeros. Converter by NASA: http://www-air.larc.nasa.gov/tools/jday.htm>
@@ -151,22 +151,22 @@ S                   < 1 char; Airline specific. S=stop?>
       {
         "key": "baggagedrop",
         "label": "Baggage Drop Off:",
-        "value": "Term. 2, Bag Drop Kiosk, Departure Level no later than: 21:15 o´clock"
+        "value": "Term. x, Bag Drop Kiosk, Departure Level no later than: hh:mm o´clock"
       }, //Drop of should match relevantDate - optional
       {
         "key": "filekey",
         "label": "Booking reference:",
-        "value": "XXXXXX" //LH Booking Reference
+        "value": "XXXXXX" //LH Booking Reference No. / PNR
       },
       {
         "key": "etix",
         "label": "etix:",
-        "value": "xxxxxxxxxxxxxxx" //ETIX No
+        "value": "xxxxxxxxxxxxxxx" //ETIX No.
       },
       {
         "key": "cancel",
         "label": "Change seat or cancel Check-in",
-        "value": "In case you change your flight plans on short notice or you would like to choose another seat, please cancel or change your checked-in flight here: http://mobile.lufthansa.com/lp/cki/?ticketnr\u003d<ETIX No>\u0026fname\u003d<First Name i.e. Will>\u0026name\u003d<Family Name i.e. Smith>.\n\nYou have access to your Passenger Receipt at www.lufthansa.com up to 30 days after beginning your journey."
+        "value": "In case you change your flight plans on short notice or you would like to choose another seat, please cancel or change your checked-in flight here: http://mobile.lufthansa.com/lp/cki/?ticketnr\u003d<ETIX No>\u0026fname\u003d<First Name i.e. WILL>\u0026name\u003d<Family Name i.e. SMITH>.\n\nYou have access to your Passenger Receipt at www.lufthansa.com up to 30 days after beginning your journey."
       },
       {
         "key": "liability",
