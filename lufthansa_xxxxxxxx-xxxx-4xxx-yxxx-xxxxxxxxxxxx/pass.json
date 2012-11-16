@@ -1,8 +1,8 @@
 {
   "formatVersion": 1,
-  "passTypeIdentifier": "pass.com.lufthansa.mbp", // Lufthansa passTypeIdentifier (MobileBoardingPass mbp)
+  "passTypeIdentifier": "pass.com.lufthansa.mbp", // Lufthansa passTypeIdentifier (MobileBoardingPass mbp) (pass.nl.mijnbc.test)
   "serialNumber": "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx", //Version 4 UUID (http://en.wikipedia.org/wiki/Universally_unique_identifier#Version_4_.28random.29)
-  "teamIdentifier": "25EFLW88R4", //Lufthansa Team
+  "teamIdentifier": "25EFLW88R4", //Lufthansa Team (AGKMBZTN3K)
   "organizationName": "Lufthansa",
   "description": "Lufthansa - Mobile Boarding Pass - Flight LHxxxx (SSS-DDD)", //(xxxx = Flight No (with 0s omitted so 0815 will be LH815, SSS=IATA Code Start Location, DDD=IATA Code Destination Location)
   "foregroundColor": "rgb(51, 51, 51)",
