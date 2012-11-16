@@ -30,9 +30,21 @@ A JSON (JavaScript Object Notation) dictionary that defines the pass. Its conten
 
 A detached PKCS#7 signature of the manifest.json file.
 
-Get Worldwide Developer Relations Certificate from http://www.apple.com/certificateauthority/
+Get Worldwide Developer Relations Certificate from http://www.apple.com/certificateauthority/:
 
-Get Apple Pass Certificate from iOS Provisiong Portal
+Download and import your WWDR Intermediate certificate to Keychain, export as .pem 
+
+Get Apple Pass Certificate from iOS Provisiong Portal:
+
+Requesting the Pass Certificate
+
+    Go to the iOS Provisioning portal
+    Create a new Pass Type ID
+    Request the certificate like shown
+    Download the .cer file and drag it into Keychain Access
+    Right click the certificate in Keychain Access and choose Export 'pass.<id>'…
+    Choose a password and export the file to a folder
+
 
 openssl pkcs12 -passin pass:"somepass" -in "mycert.p12" -clcerts -nokeys -out certificate.pem
 openssl pkcs12 -passin pass:"somepass" -in "mycert.p12" -nocerts -out key.pem -passout pass:"somepass"
