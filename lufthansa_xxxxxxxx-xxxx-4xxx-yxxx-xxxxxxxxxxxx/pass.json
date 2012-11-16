@@ -27,7 +27,7 @@ HKG                 < 3 char; To City Airport IATA Code>
 LH_                 < 3 char; Operating Carrier Code. Left justified and trailing blanks>
 0730_               < 5 char; Flight No. Leading zero on numerics and trailing blanks>
 228                 < 3 char; Date of Flight (in Julian Date) ie. 228=16th Aug. Leading zeros. Converter by NASA: http://www-air.larc.nasa.gov/tools/jday.htm>
-M                   < 1 char; Compartment Code i.e. M=Economy, others?>
+M                   < 1 char; Compartment Code i.e. M=Economy or Middle?, C=Front or Business?>
 045F                < 4 char; Seat No. Leading zeros>
 0025_               < 5 char; Check-in Seq No. Leading zero on numerics and trailing blanks>
 3                   < 1 char; Passenger Status 3=?, others?>
