@@ -17,20 +17,20 @@
   ],
   "barcode": {//message (mostly) uses the format as described inIATA BCBP standard / IATA resolution 792, June2010 - there are no carriage returns, in the code they are only to increase readability. '_' depicts "space" in case not specified otherwhise.
     "message": "
-M                   < 1 char; Format Code. S=Single.M=Multiple>
+M                   < 1 char; Format Code. S=Single, M=Multiple (only M seen so far)>
 1                   < 1 char; Legs indicator. Legs are stop-overs / segments in IATA language>
 WILL/SMITH__________<20 char; Passenger Name sepperated in FIRSTNAME/LASTNAME all caps. Left justified and trailing blanks>
 E                   < 1 char; E=Electronic Ticket Indicator>
-ABC123_             < 7 char; ABC123=Lufthansa Booking / PNR Code. Left justified and trailing blanks>
+ABC123_             < 7 char; ABC123=Lufthansa Booking No. / PNR Code. Left justified and trailing blanks>
 CGN                 < 3 char; From City Airport IATA Code>
 HKG                 < 3 char; To City Airport IATA Code>
 LH_                 < 3 char; Operating Carrier Code. Left justified and trailing blanks>
 0730_               < 5 char; Flight No. Leading zero on numerics and trailing blanks>
 228                 < 3 char; Date of Flight (in Julian Date) ie. 228=16th Aug. Leading zeros. Converter by NASA: http://www-air.larc.nasa.gov/tools/jday.htm>
-M                   < 1 char; Compartment Code i.e. M=Economy)>
+M                   < 1 char; Compartment Code i.e. M=Economy, others?>
 045F                < 4 char; Seat No. Leading zeros>
 0025_               < 5 char; Check-in Seq No. Leading zero on numerics and trailing blanks>
-3                   < 1 char; Passenger Status 3=?>
+3                   < 1 char; Passenger Status 3=?, others?>
 55                  < 2 char; Field Size in chars of the following variable size field in hex. ie. 55(hex)=85(dec) until the end of message. Right justified and leading zeros>
 \u003e              < 1 char; BUT \u003e =">"-char ASCII unicode escape encoded as used in JSON; ">"=Beginning of Version No>
 2                   < 1 char; Version No.>
@@ -45,8 +45,8 @@ _____________       <13 char; Baggage Tag licence plate No.(s)><end of struct ms
 26                  < 2 char; Field size of following structured message (repeated) in hex ie. 26(hex)=38(dec). Right justified with leading zeros>
 220                 < 3 char; Air Line numeric Code / IATA Prefix Code. 220 = LH. Details: http://www.avcodes.co.uk/airlcodesearch.asp Beginning of ETIX No. Right justified with leading zeros>
 1234567890          <10 char; Document Form Serial Number. Continuation of ETIX No. Right justified with leading zeros>
-_                   < 1 char; Selectee indicator>
-_                   < 1 char; International Document Verification>
+_                   < 1 char; Selectee indicator. Unknown use.>
+_                   < 1 char; International Document Verification. Unknown use.>
 LH_                 < 3 char; Marketing Carrier Designator. Left justified and trailing blanks>
 LH_                 < 3 char; Frequent Flyer Airline Designator. Left justified and trailing blanks>
 123456789012345_    <16 char; Miles & More Frequent Flyer No. Left justified and trailing blanks>
@@ -67,13 +67,13 @@ S                   < 1 char; Airline specific. S=stop?>
       {
         "key": "seat",
         "label": "SEAT",
-        "value": "xxx", //Seat Value , ie 45F
+        "value": "xxx", //Seat Value , ie 45F. No leading zeros.
         "changeMessage": "Seat changed to %@"
       },
       {
         "key": "gate",
         "label": "GATE",
-        "value": "xxx", //Gate Value, ie D15
+        "value": "xxx", //Gate Value, ie D15. No leading zeros.
         "changeMessage": "Gate changed to %@"
       }
     ],
@@ -95,7 +95,7 @@ S                   < 1 char; Airline specific. S=stop?>
       {
         "key": "passenger",
         "label": "NAME OF PASSENGER",
-        "value": "xxx, yyy", //Will, Smith (not fully Caps)
+        "value": "xxx, yyy", //Will, Smith (no full caps)
         "changeMessage": "Passenger name changed to %@"
       },
       {
@@ -109,7 +109,7 @@ S                   < 1 char; Airline specific. S=stop?>
       {
         "key": "flight",
         "label": "FLIGHT",
-        "value": "LHxxx", //Flight No (with 0s omitted so 0815 will be LH815)
+        "value": "LHxxx", //Flight No (no leading zeros, so 0815 will be LH815)
         "changeMessage": "Flight number time changed to %@"
       },
       {
@@ -121,17 +121,17 @@ S                   < 1 char; Airline specific. S=stop?>
       {
         "key": "boarding",
         "label": "BOARDING",
-        "value": "13:25", //should match relevantDate
+        "value": "hh:mm", //should match relevantDate
         "changeMessage": "Boarding time changed to %@"
       },
       {
         "key": "class",
         "label": "CLASS",
-        "value": "Economy",
+        "value": "Economy", //Economy, Business?, First?
         "changeMessage": "Class changed to %@"
       },
       {
-        "key": "data", //this section for internation flight only
+        "key": "data", //this section for internation flight only, it seems (unconfirmed)
         "label": "DATA",
         "value": "DOC OK", 
         "changeMessage": "Data changed to %@"
@@ -156,12 +156,12 @@ S                   < 1 char; Airline specific. S=stop?>
       {
         "key": "filekey",
         "label": "Booking reference:",
-        "value": "XXXXXX" //LH Booking Reference No. / PNR
+        "value": "XXXXXX" //LH Booking No. / PNR
       },
       {
         "key": "etix",
         "label": "etix:",
-        "value": "xxxxxxxxxxxxxxx" //ETIX No.
+        "value": "xxxxxxxxxxxxxxx" //ETIX No., 220....
       },
       {
         "key": "cancel",
