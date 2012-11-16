@@ -101,7 +101,7 @@ S                   < 1 char; Airline specific. S=stop?>
       {
         "key": "status",
         "label": "STATUS",
-        "value": "FTL", //FTL = Frequent Traveller, SEN = Senator, HON = Hon Circle
+        "value": "FTL", //FTL = Frequent Traveller, SEN = Senator, HON = Hon Circle, M/M = ?, SKP = Code Sharing with SK?, UAP = Code Sharing with UA?
         "changeMessage": "Status changed to %@"
       }
     ],
@@ -127,13 +127,13 @@ S                   < 1 char; Airline specific. S=stop?>
       {
         "key": "class",
         "label": "CLASS",
-        "value": "Economy", //Economy, Business?, First?
+        "value": "Economy", //Economy, Business, First?
         "changeMessage": "Class changed to %@"
       },
       {
         "key": "data", //this section for internation flight only, it seems (unconfirmed)
         "label": "DATA",
-        "value": "DOC OK", 
+        "value": "DOC OK",  //DOC OK, APIS, API OK, DOC
         "changeMessage": "Data changed to %@"
       }
     ],
