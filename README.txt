@@ -46,9 +46,9 @@ Requesting the Pass Certificate
     Choose a password and export the file to a folder
 
 
-openssl pkcs12 -passin pass:"somepass" -in "mycert.p12" -clcerts -nokeys -out certificate.pem
-openssl pkcs12 -passin pass:"somepass" -in "mycert.p12" -nocerts -out key.pem -passout pass:"somepass"
-openssl smime -binary -sign -certfile WWDR.pem -signer certificate.pem -inkey key.pem -in manifest.json -out signature -outform DER -passin pass:"somepass"
+openssl pkcs12 -passin pass:"somepass" -in "Certificate.p12" -clcerts -nokeys -out certificate.pem
+openssl pkcs12 -passin pass:"somepass" -in "Certificate.p12" -nocerts -out key.pem -passout pass:"somepass"
+openssl smime -binary -sign -certfile AppleWWDRCA.pem -signer certificate.pem -inkey key.pem -in manifest.json -out signature -outform DER -passin pass:"somepass"
 
 
 Note: All of the pass’s images are loaded using standard UIImage image-loading methods. This means, for example, the file name of high resolution (retina) version of the image ends with @2x.png. 
