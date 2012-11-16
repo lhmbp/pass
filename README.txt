@@ -1,14 +1,14 @@
-Passbook Passes
+Lufthansa Passbook Passes
 
-Pass files are stored on disk as a zipped package with the pkpass file extension. The top level of the package contains the following files:
+Lufthansa Pass files follow the following naming convention:
 
-    background.png 
+lufthansa_xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx.pkpass
 
-The image displayed as the background of the front of the pass.
+xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx is Version 4 UUID (http://en.wikipedia.org/wiki/Universally_unique_identifier#Version_4_.28random.29)
 
-    footer.png 
+They are stored on disk as a zipped package with the pkpass file extension. 
 
-The image displayed on the front of the pass near the barcode.
+The top level of the package contains the following files:
 
     icon.png 
 
@@ -30,12 +30,5 @@ A JSON (JavaScript Object Notation) dictionary that defines the pass. Its conten
 
 A detached PKCS#7 signature of the manifest.json file.
 
-    strip.png 
-
-The image displayed behind the primary fields on the front of the pass.
-
-    thumbnail.png 
-
-An additional image displayed on the front of the pass. For example, on a membership card, the thumbnail could be used to a picture of the cardholder.
 
 Note: All of the pass’s images are loaded using standard UIImage image-loading methods. This means, for example, the file name of high resolution (retina) version of the image ends with @2x.png. 
