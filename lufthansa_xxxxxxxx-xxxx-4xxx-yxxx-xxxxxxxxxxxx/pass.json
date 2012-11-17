@@ -73,7 +73,7 @@ S                   < 1 char; Airline specific. S=stop?>
       {
         "key": "gate",
         "label": "GATE",
-        "value": "xxx", //Gate Value, ie D15. No leading zeros.
+        "value": "xxx", //Gate Value, ie D15. No leading zeros. Also saw "...."
         "changeMessage": "Gate changed to %@"
       }
     ],
