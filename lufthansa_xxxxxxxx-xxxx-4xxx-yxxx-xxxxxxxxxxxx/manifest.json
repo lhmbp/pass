@@ -1,7 +1,9 @@
-{
+ {
   "icon@2x.png": "57febda97eba9ea3715ba0ae8ca27d1e600d0eac",
+  "footer@2x.png": "590e7dfb7766545d435e25a63f9faa259a9b798c",
   "icon.png": "fce6d547d664c52e95cada333abc6dbc657a88eb",
   "logo.png": "3967069f63c90c14b0f0535623c3c88d87331f94",
-  "pass.json": "sha1",
+  "pass.json": "8d7b6d4693fb9ae65b290fcd228d1de81cde832b",
+  "footer.png": "4e275621c657706b2732f42c00589333f45a886d",
   "logo@2x.png": "5b247c85aab8759dc126cf4d49b72289a2766d60"
 }
