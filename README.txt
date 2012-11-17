@@ -12,6 +12,10 @@ They are stored on disk as a zipped package with the pkpass file extension.
 
 The top level of the package contains the following files:
 
+    footer.png 
+
+The image displayed on the front of the pass near the barcode. Only seen for Priority Boarding so far.
+
     icon.png 
 
 The pass’s icon. This is displayed in notifications and in emails that have a pass attached, and on the lock screen. When it is displayed, the icon gets a shine effect and rounded corners.
