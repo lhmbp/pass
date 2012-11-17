@@ -1,5 +1,7 @@
 Lufthansa Passbook Passes
 
+Test Passes can be generated here: mobile.lufthansa.com/mos/mbptest.jsp
+
 Lufthansa Pass files follow the following naming convention:
 
 lufthansa_xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx.pkpass
