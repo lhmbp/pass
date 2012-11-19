@@ -101,7 +101,7 @@ S                   < 1 char; Airline specific. S=stop?>
       {
         "key": "status",
         "label": "STATUS",
-        "value": "FTL", //FTL = Frequent Traveller, SEN = Senator, HON = Hon Circle, M/M = ?, SKP = Code Sharing with SK?, UAP = Code Sharing with UA?
+        "value": "FTL", //FTL = Frequent Traveller, SEN = Senator, HON = Hon Circle, M/M = lowest status (general member) of Miles & More or that your real status was not identified correctly, SKP = Code Sharing with SK?, UAP = Code Sharing with UA?, FCI (unsure if it exists) = First Class Itinerary (?)
         "changeMessage": "Status changed to %@"
       }
     ],
@@ -133,7 +133,11 @@ S                   < 1 char; Airline specific. S=stop?>
       {
         "key": "data", //this section for internation flight only, it seems (unconfirmed)
         "label": "DATA",
-        "value": "DOC OK",  //DOC OK, APIS, API OK, DOC
+        "value": "DOC OK",  //DOC OK =?, 
+                            //APIS = Advance Passenger Information System done (http://www.lufthansa.com/online/portal/lh/de/info_services/at_the_airport?l=en&nodeid=1521899), 
+                            //API OK = same as APIS? You will also see the API OK if you are travelling from a Schengen country to the ie. UK. In practice this means that your passport info has been entered into the reservation, 
+                            //DOC =?, 
+                            //SSSS = Selected for Secondary Security Screening. As far as I understood the airline / DHS just did some backround research. Like checking criminal record etc. Two things are possible. You match a pattern defined by DHS or the randomizer hits you. 
         "changeMessage": "Data changed to %@"
       }
     ],
