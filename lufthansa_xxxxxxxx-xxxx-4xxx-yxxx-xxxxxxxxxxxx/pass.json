@@ -133,10 +133,11 @@ S                   < 1 char; Airline specific. S=stop?>
       {
         "key": "data", //this section for internation flight only, it seems (unconfirmed)
         "label": "DATA",
-        "value": "DOC OK",  //DOC OK =?, 
-                            //APIS = Advance Passenger Information System done (http://www.lufthansa.com/online/portal/lh/de/info_services/at_the_airport?l=en&nodeid=1521899), 
-                            //API OK = same as APIS? You will also see the API OK if you are travelling from a Schengen country to the ie. UK. In practice this means that your passport info has been entered into the reservation, 
-                            //DOC =?, 
+        "value": "DOC OK",  //DOC OK = all (Passport) data are maintained and OK for the ticket (by the airline) 
+                            //DOC = some (Passport) date fields are missing (i.e middle name) or differ from the the data maintained on the ticket (by the airline)
+                            //APIS = Advance Passenger Information System done (http://www.lufthansa.com/online/portal/lh/de/info_services/at_the_airport?l=en&nodeid=1521899).
+                            //API OK = Advance Passenger Information (same as APIS?) You will also see the API OK if you are travelling from a Schengen country to the ie. UK. In practice this means that your passport info has been entered into the reservation, and it is OK. 
+                            //API = (unconfirmed this value exists) some data missing or different ? (see DOC OK vs DOC)
                             //SSSS = Selected for Secondary Security Screening. As far as I understood the airline / DHS just did some backround research. Like checking criminal record etc. Two things are possible. You match a pattern defined by DHS or the randomizer hits you. 
         "changeMessage": "Data changed to %@"
       }
