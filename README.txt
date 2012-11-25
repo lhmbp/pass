@@ -36,13 +36,14 @@ A JSON (JavaScript Object Notation) dictionary that defines the pass. Its conten
 
 A detached PKCS#7 signature of the manifest.json file.
 
-Get Worldwide Developer Relations Certificate from http://www.apple.com/certificateauthority/:
+Note: All of the pass’s images are loaded using standard UIImage image-loading methods. This means, for example, the file name of high resolution (retina) version of the image ends with @2x.png. 
 
-Download and import your WWDR Intermediate certificate to Keychain, export as .pem 
+How to sign your passes:
+
+   Get Worldwide Developer Relations Certificate from http://www.apple.com/certificateauthority/
+   Download and import your WWDR Intermediate certificate to Keychain, export as .pem 
 
 Get Apple Pass Certificate from iOS Provisiong Portal:
-
-Requesting the Pass Certificate
 
     Go to the iOS Provisioning portal
     Create a new Pass Type ID
@@ -55,6 +56,3 @@ Requesting the Pass Certificate
 openssl pkcs12 -passin pass:"somepass" -in "Certificate.p12" -clcerts -nokeys -out certificate.pem
 openssl pkcs12 -passin pass:"somepass" -in "Certificate.p12" -nocerts -out key.pem -passout pass:"somepass"
 openssl smime -binary -sign -certfile AppleWWDRCA.pem -signer certificate.pem -inkey key.pem -in manifest.json -out signature -outform DER -passin pass:"somepass"
-
-
-Note: All of the pass’s images are loaded using standard UIImage image-loading methods. This means, for example, the file name of high resolution (retina) version of the image ends with @2x.png. 
