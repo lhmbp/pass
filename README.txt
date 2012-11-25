@@ -40,8 +40,8 @@ Note: All of the pass’s images are loaded using standard UIImage image-loading
 
 How to sign your passes:
 
-   Get Worldwide Developer Relations Certificate from http://www.apple.com/certificateauthority/
-   Download and import your WWDR Intermediate certificate to Keychain, export as .pem 
+    Get Worldwide Developer Relations Certificate from http://www.apple.com/certificateauthority/
+    Download and import your WWDR Intermediate certificate to Keychain, export as .pem 
 
 Get Apple Pass Certificate from iOS Provisiong Portal:
 
@@ -52,7 +52,11 @@ Get Apple Pass Certificate from iOS Provisiong Portal:
     Right click the certificate in Keychain Access and choose Export 'pass.<id>'…
     Choose a password and export the file to a folder
 
-
 openssl pkcs12 -passin pass:"somepass" -in "Certificate.p12" -clcerts -nokeys -out certificate.pem
 openssl pkcs12 -passin pass:"somepass" -in "Certificate.p12" -nocerts -out key.pem -passout pass:"somepass"
 openssl smime -binary -sign -certfile AppleWWDRCA.pem -signer certificate.pem -inkey key.pem -in manifest.json -out signature -outform DER -passin pass:"somepass"
+
+Usefull things:
+
+    https://github.com/kyleroche/iOS6-passbook-helper
+    https://github.com/tschoffelen/PHP-PKPass
